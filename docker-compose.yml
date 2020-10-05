@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exchange
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
+
+  stubby4j:
+    image: kalleodocker/stubby4j:1.1
+    ports:
+      - "8882:8882"
+    environment:
+      STUBBY_PORT: 8882
+    volumes:
+      - ./stubby4j/stubby4j.yml:/usr/local/stubby.yml
+      - ./stubby4j/response:/usr/local/response
+      - ./stubby4j/request:/usr/local/request

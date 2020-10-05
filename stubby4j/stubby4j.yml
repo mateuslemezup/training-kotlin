@@ -1,0 +1,13 @@
+### training-kotlin ###
+
+## Exchange Partner ##
+
+- description: Exchange
+  request:
+    method: GET
+    url: ^/v6/latest$
+  response:
+    status: 200
+    file: /response/exchange-response-success.json
+    headers:
+      content-type: application/json

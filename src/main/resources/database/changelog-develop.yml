@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Mateus Spada Leme
+      changes:
+        - sqlFile:
+            dbms: mysql
+            encoding: UTF-8
+            endDelimiter: \nGO
+            path: develop/scripts/01/create_tables.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

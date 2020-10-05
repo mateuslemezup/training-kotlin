@@ -1,0 +1,9 @@
+spring:
+  application.name: training-kotlin
+  profiles.active: dev
+
+info.application:
+  application-name: ${spring.application.name}
+  groupId: '@project.groupId@'
+  artifactId: '@project.artifactId@'
+  version: '@project.version@'
